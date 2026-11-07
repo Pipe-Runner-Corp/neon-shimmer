@@ -224,8 +224,8 @@ const PALETTES = {
       plainText: '#ffffff',
       type: '#f942ff',
       function: '#8968ff',
-      operator: '#ff845e',
-      comment: '#7f848eea', // WCAG 2.1 AA contrast verified (alpha 91.8%)
+      operator: '#8968ff', // Reusing function purple for distinct contrast against pink variables/parameters (Issue #8)
+      comment: '#8c929eea', // Brightened gray for enhanced readability (Issue #7, contrast > 5.5:1)
       error: '#ff1c5b'
     },
     brackets: ['#ff487b', '#8968ff', '#04d9c4', '#ffdf7e', '#f942ff', '#ff845e'],
@@ -254,7 +254,7 @@ const PALETTES = {
       type: '#FF487B',
       function: '#FF845E',
       operator: '#F22294',
-      comment: '#7f848eea',
+      comment: '#8c929eea',
       error: '#FF1C5B'
     },
     brackets: ['#E64471', '#FF845E', '#FFB3D9', '#FFDF7E', '#FF487B', '#F22294'],
@@ -283,7 +283,7 @@ const PALETTES = {
       type: '#EE4CFC',
       function: '#EE05F2',
       operator: '#A366FF', // WCAG 2.1 AA Pink operators (#A366FF >= 4.5:1)
-      comment: '#7f848eea',
+      comment: '#8c929eea',
       error: '#FF1C5B'
     },
     brackets: ['#F22294', '#EE05F2', '#FFFFFF', '#FFDF7E', '#EE4CFC', '#A366FF'],
@@ -312,7 +312,7 @@ const PALETTES = {
       type: '#D1A3FF',
       function: '#B377FF',
       operator: '#FFFFFF',
-      comment: '#7f848eea',
+      comment: '#8c929eea',
       error: '#FF1C5B'
     },
     brackets: ['#9D5EFF', '#B377FF', '#04D9C4', '#EE4CFC', '#D1A3FF', '#FFFFFF'],
@@ -341,7 +341,7 @@ const PALETTES = {
       type: '#C3FF00',
       function: '#00E5FF',
       operator: '#FF7A00',
-      comment: '#7f848eea',
+      comment: '#8c929eea',
       error: '#FF1C5B'
     },
     brackets: ['#00FF88', '#00E5FF', '#C3FF00', '#FFDF7E', '#FF7A00', '#D4FFF0'],
@@ -370,7 +370,7 @@ const PALETTES = {
       type: '#FFAA33',
       function: '#FF5436',
       operator: '#FF3388',
-      comment: '#7f848eea',
+      comment: '#8c929eea',
       error: '#FF1C5B'
     },
     brackets: ['#FFB800', '#FF5436', '#04D9C4', '#FFEE55', '#FFAA33', '#FF3388'],

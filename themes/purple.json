@@ -123,7 +123,7 @@
       "name": "Comment Markup Link",
       "scope": "comment markup.link",
       "settings": {
-        "foreground": "#7f848eea"
+        "foreground": "#8c929eea"
       }
     },
     {
@@ -1704,7 +1704,7 @@
         "beginning.punctuation.definition.list.markdown.xi"
       ],
       "settings": {
-        "foreground": "#7f848eea"
+        "foreground": "#8c929eea"
       }
     },
     {
@@ -1749,7 +1749,7 @@
         "punctuation.definition.tag.xi"
       ],
       "settings": {
-        "foreground": "#7f848eea"
+        "foreground": "#8c929eea"
       }
     },
     {
@@ -1787,14 +1787,14 @@
       "scope": "comment, punctuation.definition.comment",
       "settings": {
         "fontStyle": "italic",
-        "foreground": "#7f848eea"
+        "foreground": "#8c929eea"
       }
     },
     {
       "name": "[VSCODE-CUSTOM] Markdown Quote",
       "scope": "markup.quote.markdown",
       "settings": {
-        "foreground": "#7f848eea"
+        "foreground": "#8c929eea"
       }
     },
     {

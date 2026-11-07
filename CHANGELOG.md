@@ -23,6 +23,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ### Fixed
 
+- **Operator Contrast Matchup (Issue #8)**: Replaced Coral Orange (`#ff845e`) with Lavender Purple (`#8968ff`) for operators in base Neon Shimmer, resolving the color clash where logical/arithmetic operators blended directly into adjacent Hot Pink variables and parameters (e.g. `!targetIds && !test`).
+- **Comment Readability (Issue #7)**: Brightened comment color to `#8c929eea` (contrast $\ge 5.5:1$ across all variants), eliminating the dim comment issue and significantly enhancing editor readability.
 - **WCAG 2.1 AA Contrast**:
   - Raised editor comment alpha from 53% (`#7f848e87`, 2.22:1) to 91.8% (`#7f848eea`, >= 4.60:1), achieving strict WCAG 2.1 AA compliance across all 6 variants without lowering the audit threshold.
   - Raised Purple theme variables from `#8E4AF5` (4.37:1) to `#9D5EFF` (5.38:1) to meet AA body text standards.
