@@ -2,7 +2,7 @@
   "name": "neon-shimmer",
   "displayName": "Neon Shimmer",
   "description": "An Arcane and Cyberpunk inspired dark theme for neon lovers.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "publisher": "piperunner",
   "preview": false,
   "keywords": [
@@ -45,10 +45,23 @@
         "label": "Neon Shimmer // Amethyst Core",
         "uiTheme": "vs-dark",
         "path": "./themes/purple.json"
+      },
+      {
+        "label": "Neon Shimmer // Acid Chemtech",
+        "uiTheme": "vs-dark",
+        "path": "./themes/green.json"
+      },
+      {
+        "label": "Neon Shimmer // Solar Amber",
+        "uiTheme": "vs-dark",
+        "path": "./themes/amber.json"
       }
     ]
   },
   "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node scripts/build.js",
+    "vscode:prepublish": "npm run build",
     "package": "vsce package",
     "publish": "vsce publish"
   },

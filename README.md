@@ -8,7 +8,7 @@ An Arcane and Cyberpunk inspired dark theme for neon lovers.
 
 ### Neon Shimmer (Original Improved)
 
-![Neon Shimmer Preview](previews/neon.png)
+![Neon Shimmer Preview](https://raw.githubusercontent.com/Pipe-Runner-Lab/neon-shimmer/master/previews/neon.png)
 
 #### Color Palette (Original)
 
@@ -26,7 +26,7 @@ It uses the neon theme taken from different sci-fi art works like Cyberpunk and 
 
 ### Neon Shimmer // Crimson Drive 🔴
 
-![Crimson Drive Preview](previews/red.png)
+![Crimson Drive Preview](https://raw.githubusercontent.com/Pipe-Runner-Lab/neon-shimmer/master/previews/red.png)
 
 Intense dark red-black backgrounds with red highlights dominating the interface and primary variables. Mapped primarily to `#E64471`.
 
@@ -34,7 +34,7 @@ Intense dark red-black backgrounds with red highlights dominating the interface 
 
 ### Neon Shimmer // Bubblegum Punk 🌸
 
-![Bubblegum Punk Preview](previews/pink.png)
+![Bubblegum Punk Preview](https://raw.githubusercontent.com/Pipe-Runner-Lab/neon-shimmer/master/previews/pink.png)
 
 A vivid magenta trip with different saturation levels of pink mapping out syntax structures against a dark pink canvas. Mapped primarily to `#F22294` and `#EE4CFC`.
 
@@ -42,6 +42,22 @@ A vivid magenta trip with different saturation levels of pink mapping out syntax
 
 ### Neon Shimmer // Amethyst Core 🔮
 
-![Amethyst Core Preview](previews/purple.png)
+![Amethyst Core Preview](https://raw.githubusercontent.com/Pipe-Runner-Lab/neon-shimmer/master/previews/purple.png)
 
 Deep violet backgrounds accented by purple UI elements, lavender functions, and contrasting teal keywords. Mapped primarily to `#8E4AF5`.
+
+---
+
+### Neon Shimmer // Acid Chemtech 🧪
+
+![Acid Chemtech Preview](https://raw.githubusercontent.com/Pipe-Runner-Lab/neon-shimmer/master/previews/green.png)
+
+Arcane Zaun chemtech inspired deep emerald-black backgrounds (`#010C07`) with toxic emerald variables (`#00FF88`), acid lime types (`#C3FF00`), electric cyan functions (`#00E5FF`), and neon tangerine operators (`#FF7A00`).
+
+---
+
+### Neon Shimmer // Solar Amber ⚡
+
+![Solar Amber Preview](https://raw.githubusercontent.com/Pipe-Runner-Lab/neon-shimmer/master/previews/amber.png)
+
+Arcane Hextech solar core inspired deep warm obsidian backgrounds (`#0A0702`) radiating cyber gold variables (`#FFB800`), bright canary constants (`#FFEE55`), electric cyan keywords (`#04D9C4`), and neon coral functions (`#FF5436`).
