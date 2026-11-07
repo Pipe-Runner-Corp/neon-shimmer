@@ -1,4 +1,5 @@
 {
+  "$schema": "vscode://schemas/color-theme",
   "name": "Neon Shimmer",
   "type": "dark",
   "semanticHighlighting": true,
@@ -11,6 +12,26 @@
     },
     "variable.defaultLibrary": {
       "foreground": "#f942ff"
+    },
+    "variable.readonly": {
+      "foreground": "#ffdf7e"
+    },
+    "property.readonly": {
+      "foreground": "#ffdf7e"
+    },
+    "parameter": {
+      "foreground": "#ff487b",
+      "italic": true
+    },
+    "typeParameter": {
+      "foreground": "#f942ff",
+      "italic": true
+    },
+    "concept": {
+      "foreground": "#f942ff"
+    },
+    "*.declaration": {
+      "bold": true
     }
   },
   "tokenColors": [
@@ -2174,6 +2195,13 @@
     "multiDiffEditor.headerBackground": "#0f0011",
     "multiDiffEditor.background": "#000000",
     "multiDiffEditor.border": "#ee4cfc1c",
+    "diffEditor.unchangedRegionBackground": "#0f0011",
+    "diffEditor.unchangedRegionForeground": "#8c929eea",
+    "diffEditor.unchangedCodeBackground": "#000000",
+    "window.activeBorder": "#8e4af580",
+    "window.inactiveBorder": "#8e4af533",
+    "profileBadge.background": "#fc6f4c",
+    "profileBadge.foreground": "#ffffff",
     "symbolIcon.arrayForeground": "#ffdf7e",
     "symbolIcon.booleanForeground": "#ffdf7e",
     "symbolIcon.classForeground": "#f942ff",

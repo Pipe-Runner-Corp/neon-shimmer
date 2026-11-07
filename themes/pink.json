@@ -1,4 +1,5 @@
 {
+  "$schema": "vscode://schemas/color-theme",
   "name": "Neon Shimmer // Bubblegum Punk",
   "type": "dark",
   "semanticHighlighting": true,
@@ -11,6 +12,26 @@
     },
     "variable.defaultLibrary": {
       "foreground": "#EE4CFC"
+    },
+    "variable.readonly": {
+      "foreground": "#FFDF7E"
+    },
+    "property.readonly": {
+      "foreground": "#FFDF7E"
+    },
+    "parameter": {
+      "foreground": "#F22294",
+      "italic": true
+    },
+    "typeParameter": {
+      "foreground": "#EE4CFC",
+      "italic": true
+    },
+    "concept": {
+      "foreground": "#EE4CFC"
+    },
+    "*.declaration": {
+      "bold": true
     }
   },
   "tokenColors": [
@@ -2174,6 +2195,13 @@
     "multiDiffEditor.headerBackground": "#0F000B",
     "multiDiffEditor.background": "#080006",
     "multiDiffEditor.border": "#EE4CFC1c",
+    "diffEditor.unchangedRegionBackground": "#0F000B",
+    "diffEditor.unchangedRegionForeground": "#8c929eea",
+    "diffEditor.unchangedCodeBackground": "#080006",
+    "window.activeBorder": "#D414A880",
+    "window.inactiveBorder": "#D414A833",
+    "profileBadge.background": "#EE05F2",
+    "profileBadge.foreground": "#ffffff",
     "symbolIcon.arrayForeground": "#FFDF7E",
     "symbolIcon.booleanForeground": "#FFDF7E",
     "symbolIcon.classForeground": "#EE4CFC",

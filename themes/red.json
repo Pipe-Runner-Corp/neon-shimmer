@@ -1,4 +1,5 @@
 {
+  "$schema": "vscode://schemas/color-theme",
   "name": "Neon Shimmer // Crimson Drive",
   "type": "dark",
   "semanticHighlighting": true,
@@ -11,6 +12,26 @@
     },
     "variable.defaultLibrary": {
       "foreground": "#FF487B"
+    },
+    "variable.readonly": {
+      "foreground": "#FFDF7E"
+    },
+    "property.readonly": {
+      "foreground": "#FFDF7E"
+    },
+    "parameter": {
+      "foreground": "#E64471",
+      "italic": true
+    },
+    "typeParameter": {
+      "foreground": "#FF487B",
+      "italic": true
+    },
+    "concept": {
+      "foreground": "#FF487B"
+    },
+    "*.declaration": {
+      "bold": true
     }
   },
   "tokenColors": [
@@ -2174,6 +2195,13 @@
     "multiDiffEditor.headerBackground": "#120205",
     "multiDiffEditor.background": "#0A0103",
     "multiDiffEditor.border": "#E644711c",
+    "diffEditor.unchangedRegionBackground": "#120205",
+    "diffEditor.unchangedRegionForeground": "#8c929eea",
+    "diffEditor.unchangedCodeBackground": "#0A0103",
+    "window.activeBorder": "#B3244F80",
+    "window.inactiveBorder": "#B3244F33",
+    "profileBadge.background": "#FF845E",
+    "profileBadge.foreground": "#ffffff",
     "symbolIcon.arrayForeground": "#FFDF7E",
     "symbolIcon.booleanForeground": "#FFDF7E",
     "symbolIcon.classForeground": "#FF487B",

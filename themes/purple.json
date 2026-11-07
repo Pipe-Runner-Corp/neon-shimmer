@@ -1,4 +1,5 @@
 {
+  "$schema": "vscode://schemas/color-theme",
   "name": "Neon Shimmer // Amethyst Core",
   "type": "dark",
   "semanticHighlighting": true,
@@ -11,6 +12,26 @@
     },
     "variable.defaultLibrary": {
       "foreground": "#D1A3FF"
+    },
+    "variable.readonly": {
+      "foreground": "#EE4CFC"
+    },
+    "property.readonly": {
+      "foreground": "#EE4CFC"
+    },
+    "parameter": {
+      "foreground": "#9D5EFF",
+      "italic": true
+    },
+    "typeParameter": {
+      "foreground": "#D1A3FF",
+      "italic": true
+    },
+    "concept": {
+      "foreground": "#D1A3FF"
+    },
+    "*.declaration": {
+      "bold": true
     }
   },
   "tokenColors": [
@@ -2174,6 +2195,13 @@
     "multiDiffEditor.headerBackground": "#0D001F",
     "multiDiffEditor.background": "#070012",
     "multiDiffEditor.border": "#B377FF1c",
+    "diffEditor.unchangedRegionBackground": "#0D001F",
+    "diffEditor.unchangedRegionForeground": "#8c929eea",
+    "diffEditor.unchangedCodeBackground": "#070012",
+    "window.activeBorder": "#8E4AF580",
+    "window.inactiveBorder": "#8E4AF533",
+    "profileBadge.background": "#D1A3FF",
+    "profileBadge.foreground": "#ffffff",
     "symbolIcon.arrayForeground": "#EE4CFC",
     "symbolIcon.booleanForeground": "#EE4CFC",
     "symbolIcon.classForeground": "#D1A3FF",

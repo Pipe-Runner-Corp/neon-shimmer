@@ -37,3 +37,9 @@ This repository maintains the **Neon Shimmer** theme suite for VS Code. All agen
 ## 5. Clean Repository Paths & Zero PII
 - **Never** embed absolute local file paths, machine-specific paths, usernames, or PII into repository source files, scripts, comments, or generated outputs.
 - Always use relative paths from the workspace root (e.g. `themes/`, `scripts/`, `assets/`).
+
+## 6. Official VS Code Theme Best Practices
+- **JSON Schema Validation**: Every generated theme JSON must declare `"$schema": "vscode://schemas/color-theme"`.
+- **Workspace Trust**: Declare `"capabilities": { "untrustedWorkspaces": { "supported": true } }` in `package.json` so themes function safely in Restricted Mode without trust prompts.
+- **Semantic Highlighting**: Maintain symbol-aware semantic tokens (`parameter`, `variable.readonly`, `property.readonly`, `typeParameter`, `concept`, `"*.declaration"`) complementing TextMate rules without jarring color clashes.
+- **Marketplace Metadata**: Maintain `galleryBanner`, `bugs`, `homepage`, and `qna` in `package.json` for professional extension presentation.

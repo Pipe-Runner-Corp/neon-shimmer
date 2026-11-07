@@ -91,6 +91,7 @@ function getModernSurfaces(palette) {
   const type = palette.slots.type;
   const fn = palette.slots.function;
   const op = palette.slots.operator;
+  const comment = palette.slots.comment;
   const brackets = palette.brackets;
 
   return {
@@ -141,10 +142,19 @@ function getModernSurfaces(palette) {
     'sideBarStickyScroll.border': sideBarBorder,
     'sideBarStickyScroll.shadow': withAlpha(bg, '80'),
 
-    // multiDiffEditor (VS Code 1.86+)
+    // multiDiffEditor & modern diff regions (VS Code 1.86+)
     'multiDiffEditor.headerBackground': sideBarBg,
     'multiDiffEditor.background': bg,
     'multiDiffEditor.border': sideBarBorder,
+    'diffEditor.unchangedRegionBackground': sideBarBg,
+    'diffEditor.unchangedRegionForeground': comment,
+    'diffEditor.unchangedCodeBackground': bg,
+
+    // Window borders & Profile badge (VS Code 1.75+)
+    'window.activeBorder': withAlpha(border, '80'),
+    'window.inactiveBorder': withAlpha(border, '33'),
+    'profileBadge.background': actBadgeBg,
+    'profileBadge.foreground': '#ffffff',
 
     // symbolIcon suite (Breadcrumbs, Quick Pick, Autocomplete)
     'symbolIcon.arrayForeground': constant,
@@ -2805,11 +2815,17 @@ function buildVariant(variantId) {
   const palette = PALETTES[variantId];
   if (!palette) throw new Error('Unknown variant: ' + variantId);
 
-  // 1. Semantic Token Colors
+  // 1. Semantic Token Colors (Official VS Code Semantic Highlighting best practices)
   const semanticTokenColors = {
     enumMember: { foreground: palette.slots.operator },
     'variable.constant': { foreground: palette.slots.constant },
-    'variable.defaultLibrary': { foreground: palette.slots.type }
+    'variable.defaultLibrary': { foreground: palette.slots.type },
+    'variable.readonly': { foreground: palette.slots.constant },
+    'property.readonly': { foreground: palette.slots.constant },
+    parameter: { foreground: palette.slots.primaryVar, italic: true },
+    typeParameter: { foreground: palette.slots.type, italic: true },
+    concept: { foreground: palette.slots.type },
+    '*.declaration': { bold: true }
   };
 
   // 2. TextMate Token Colors
@@ -2848,6 +2864,7 @@ function buildVariant(variantId) {
   Object.assign(colors, modern);
 
   return {
+    $schema: 'vscode://schemas/color-theme',
     name: palette.name,
     type: 'dark',
     semanticHighlighting: true,

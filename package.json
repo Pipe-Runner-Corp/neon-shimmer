@@ -17,6 +17,20 @@
     "type": "git",
     "url": "https://github.com/Pipe-Runner-Lab/neon-shimmer"
   },
+  "bugs": {
+    "url": "https://github.com/Pipe-Runner-Lab/neon-shimmer/issues"
+  },
+  "homepage": "https://github.com/Pipe-Runner-Lab/neon-shimmer#readme",
+  "qna": "marketplace",
+  "galleryBanner": {
+    "color": "#000000",
+    "theme": "dark"
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  },
   "icon": "assets/images/icon.png",
   "engines": {
     "vscode": "^1.62.0"

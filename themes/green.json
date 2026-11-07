@@ -1,4 +1,5 @@
 {
+  "$schema": "vscode://schemas/color-theme",
   "name": "Neon Shimmer // Acid Chemtech",
   "type": "dark",
   "semanticHighlighting": true,
@@ -11,6 +12,26 @@
     },
     "variable.defaultLibrary": {
       "foreground": "#C3FF00"
+    },
+    "variable.readonly": {
+      "foreground": "#FFDF7E"
+    },
+    "property.readonly": {
+      "foreground": "#FFDF7E"
+    },
+    "parameter": {
+      "foreground": "#00FF88",
+      "italic": true
+    },
+    "typeParameter": {
+      "foreground": "#C3FF00",
+      "italic": true
+    },
+    "concept": {
+      "foreground": "#C3FF00"
+    },
+    "*.declaration": {
+      "bold": true
     }
   },
   "tokenColors": [
@@ -2174,6 +2195,13 @@
     "multiDiffEditor.headerBackground": "#010E09",
     "multiDiffEditor.background": "#010C07",
     "multiDiffEditor.border": "#00FF881c",
+    "diffEditor.unchangedRegionBackground": "#010E09",
+    "diffEditor.unchangedRegionForeground": "#8c929eea",
+    "diffEditor.unchangedCodeBackground": "#010C07",
+    "window.activeBorder": "#00B36B80",
+    "window.inactiveBorder": "#00B36B33",
+    "profileBadge.background": "#00E5FF",
+    "profileBadge.foreground": "#ffffff",
     "symbolIcon.arrayForeground": "#FFDF7E",
     "symbolIcon.booleanForeground": "#FFDF7E",
     "symbolIcon.classForeground": "#C3FF00",

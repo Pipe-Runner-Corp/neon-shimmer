@@ -1,4 +1,5 @@
 {
+  "$schema": "vscode://schemas/color-theme",
   "name": "Neon Shimmer // Solar Amber",
   "type": "dark",
   "semanticHighlighting": true,
@@ -11,6 +12,26 @@
     },
     "variable.defaultLibrary": {
       "foreground": "#FFAA33"
+    },
+    "variable.readonly": {
+      "foreground": "#FFEE55"
+    },
+    "property.readonly": {
+      "foreground": "#FFEE55"
+    },
+    "parameter": {
+      "foreground": "#FFB800",
+      "italic": true
+    },
+    "typeParameter": {
+      "foreground": "#FFAA33",
+      "italic": true
+    },
+    "concept": {
+      "foreground": "#FFAA33"
+    },
+    "*.declaration": {
+      "bold": true
     }
   },
   "tokenColors": [
@@ -2174,6 +2195,13 @@
     "multiDiffEditor.headerBackground": "#0D0903",
     "multiDiffEditor.background": "#0A0702",
     "multiDiffEditor.border": "#FFAA331c",
+    "diffEditor.unchangedRegionBackground": "#0D0903",
+    "diffEditor.unchangedRegionForeground": "#8c929eea",
+    "diffEditor.unchangedCodeBackground": "#0A0702",
+    "window.activeBorder": "#D4880080",
+    "window.inactiveBorder": "#D4880033",
+    "profileBadge.background": "#FF5436",
+    "profileBadge.foreground": "#ffffff",
     "symbolIcon.arrayForeground": "#FFEE55",
     "symbolIcon.booleanForeground": "#FFEE55",
     "symbolIcon.classForeground": "#FFAA33",
