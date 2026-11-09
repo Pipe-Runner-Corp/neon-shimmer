@@ -6,3 +6,8 @@ vsc-extension-quickstart.md
 node_modules/**
 package-lock.json
 .gitattributes
+scripts/**
+previews/**
+assets/images/icon.jpg
+AGENTS.md
+
