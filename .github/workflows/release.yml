@@ -1,49 +1,105 @@
 name: Release
 
 on:
+  pull_request:
+    branches: [master]
   push:
-    tags:
-      - "v*"
+    branches: [master]
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  release:
+  test:
+    name: Build & verify themes
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # Compiles all themes and runs the WCAG 2.1 AA verification.
+      - run: npm test
+
+      # Fail if the committed themes differ from what the compiler produces.
+      - name: Ensure generated themes are committed
+        run: git diff --exit-code -- themes/
+
+  release:
+    name: Publish (VS Code Marketplace + Open VSX)
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      OVSX_PAT: ${{ secrets.OVSX_PAT }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Read version
+        id: meta
+        run: |
+          echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+      # A release is only cut when package.json carries a version that has not
+      # been tagged yet. Merges without a version bump are a no-op.
+      - name: Check whether this version is already released
+        id: check
+        run: |
+          if git rev-parse -q --verify "refs/tags/v${{ steps.meta.outputs.version }}" >/dev/null; then
+            echo "released=true" >> "$GITHUB_OUTPUT"
+            echo "v${{ steps.meta.outputs.version }} already released; nothing to do."
+          else
+            echo "released=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Verify publish tokens
+        if: steps.check.outputs.released == 'false'
+        run: |
+          missing=0
+          [ -n "$VSCE_PAT" ] || { echo "::error::Secret VSCE_PAT is not set"; missing=1; }
+          [ -n "$OVSX_PAT" ] || { echo "::error::Secret OVSX_PAT is not set"; missing=1; }
+          exit $missing
 
       - name: Install dependencies
+        if: steps.check.outputs.released == 'false'
         run: npm ci
 
-      - name: Package Extension
-        run: npx @vscode/vsce package
-
-      - name: Get VSIX filename
-        id: vsix
-        run: echo "filename=$(ls *.vsix)" >> $GITHUB_OUTPUT
-
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          files: ${{ steps.vsix.outputs.filename }}
-          generate_release_notes: true
+      - name: Package extension
+        if: steps.check.outputs.released == 'false'
+        run: npx vsce package --out neon-shimmer.vsix
 
       - name: Publish to VS Code Marketplace
-        if: env.VSCE_PAT != ''
-        run: npx @vscode/vsce publish
-        env:
-          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        if: steps.check.outputs.released == 'false'
+        run: npx vsce publish --packagePath neon-shimmer.vsix
 
-      - name: Publish to Open VSX Registry
-        if: env.OVSX_PAT != ''
-        run: npx ovsx publish ${{ steps.vsix.outputs.filename }} -p ${{ env.OVSX_PAT }}
-        env:
-          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+      - name: Publish to Open VSX
+        if: steps.check.outputs.released == 'false'
+        run: npx --yes ovsx@0.10.1 publish neon-shimmer.vsix
+
+      - name: Tag and create GitHub Release
+        if: steps.check.outputs.released == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.meta.outputs.version }}
+          target_commitish: ${{ github.sha }}
+          files: neon-shimmer.vsix
+          generate_release_notes: true
